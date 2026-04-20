@@ -8,6 +8,7 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+ALTER TABLE users ADD COLUMN password VARCHAR(100);
 
 -- ======================
 -- 2. GAMES
@@ -64,6 +65,11 @@ INSERT INTO users (name, email) VALUES
 ('Siti', 'siti@mail.com'),
 ('Andi', 'andi@mail.com'),
 ('Rina', 'rina@mail.com');
+UPDATE users SET password = 'steven123' WHERE email = 'steven@mail.com';
+UPDATE users SET password = 'budi123' WHERE email = 'budi@mail.com';
+UPDATE users SET password = 'siti123' WHERE email = 'siti@mail.com';
+UPDATE users SET password = 'andi123' WHERE email = 'andi@mail.com';
+UPDATE users SET password = 'rina123' WHERE email = 'rina@mail.com';
 
 -- ======================
 -- DATA GAMES
@@ -94,3 +100,9 @@ INSERT INTO transactions (user_id, product_id, quantity, total_price) VALUES
 (3, 3, 2, 40000),
 (4, 4, 1, 50000),
 (5, 5, 1, 40000);
+
+
+SELECT * FROM users;
+SELECT * FROM games;
+SELECT * FROM products;
+SELECT * FROM transactions;
